@@ -10,13 +10,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-app.use(express.urlencoded   ({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, '../frontend/src')));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/src', '../frontend/index.html'));
-  });
 
 // Middleware to parse incoming request bodies
 app.use(bodyParser.json());
